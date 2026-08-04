@@ -32,6 +32,17 @@ body {
   flex-direction: column;
 }
 
+.inapp-chrome-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--inapp-chrome-buffer);
+  background: var(--color-bg);
+  z-index: 45;
+  pointer-events: none;
+}
+
 .site-main {
   flex: 1;
 }

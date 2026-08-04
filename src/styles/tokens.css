@@ -26,4 +26,12 @@
   /* Visible viewport (synced via JS to work around in-app browser chrome overlap) */
   --vv-top: 0px;
   --vv-height: 100dvh;
+
+  /* Buffer reserved for in-app browser chrome (e.g. Telegram) that doesn't report
+     env(safe-area-inset-top) for its own toolbar. Only set when that chrome is detected. */
+  --inapp-chrome-buffer: 0px;
+}
+
+.is-inapp-chrome {
+  --inapp-chrome-buffer: 90px;
 }

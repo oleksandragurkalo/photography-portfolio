@@ -30,8 +30,15 @@ export default function Layout() {
     };
   }, []);
 
+  useEffect(() => {
+    if (/Telegram/i.test(navigator.userAgent)) {
+      document.documentElement.classList.add('is-inapp-chrome');
+    }
+  }, []);
+
   return (
     <div className="site-shell">
+      <div className="inapp-chrome-mask" aria-hidden="true" />
       <Nav />
       <main className="site-main">
         <Outlet />
