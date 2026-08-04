@@ -37,15 +37,25 @@
 }
 
 .gallery-item {
+  display: block;
+  width: 100%;
   break-inside: avoid;
   margin-bottom: 20px;
   overflow: hidden;
   background: var(--color-placeholder-bg);
+  border: none;
+  padding: 0;
+  cursor: pointer;
 }
 
 .gallery-item img {
   width: 100%;
   height: auto;
+  transition: transform 400ms ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
 }
 
 @media (max-width: 1100px) {

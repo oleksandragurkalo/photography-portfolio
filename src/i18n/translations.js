@@ -1,5 +1,8 @@
 export const translations = {
   ua: {
+    common: {
+      backToTop: 'Догори',
+    },
     nav: {
       home: 'Головна',
       portfolio: 'Портфоліо',
@@ -108,6 +111,9 @@ export const translations = {
     },
   },
   pl: {
+    common: {
+      backToTop: 'Do góry',
+    },
     nav: {
       home: 'Start',
       portfolio: 'Portfolio',
