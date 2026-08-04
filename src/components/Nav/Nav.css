@@ -2,7 +2,7 @@
   position: sticky;
   top: var(--vv-top, 0px);
   z-index: 50;
-  padding-top: env(safe-area-inset-top, 0px);
+  padding-top: max(env(safe-area-inset-top, 0px), var(--inapp-chrome-buffer, 0px));
   background: rgba(251, 249, 247, 0.95);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
@@ -110,7 +110,7 @@
 
   .nav-links {
     position: absolute;
-    top: calc(var(--nav-height) + env(safe-area-inset-top, 0px));
+    top: calc(var(--nav-height) + max(env(safe-area-inset-top, 0px), var(--inapp-chrome-buffer, 0px)));
     left: 0;
     right: 0;
     flex-direction: column;
