@@ -1,6 +1,6 @@
 .nav {
   position: sticky;
-  top: 0;
+  top: var(--vv-top, 0px);
   z-index: 50;
   padding-top: env(safe-area-inset-top, 0px);
   background: rgba(251, 249, 247, 0.95);
