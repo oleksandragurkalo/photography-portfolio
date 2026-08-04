@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import { INSTAGRAM_HANDLE, INSTAGRAM_URL } from '../../i18n/translations.js';
+import Select from '../../components/Select/Select.jsx';
 import './Contact.css';
 
 const FORMSPREE_ID = import.meta.env.VITE_FORMSPREE_ID;
@@ -9,6 +10,7 @@ export default function Contact() {
   const { t, lang } = useLanguage();
   const { contact } = t;
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
+  const [sessionType, setSessionType] = useState(contact.form.typeOptions[0]);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -84,14 +86,14 @@ export default function Contact() {
         </div>
 
         <div className="field">
-          <label htmlFor="sessionType">{contact.form.typeLabel}</label>
-          <select id="sessionType" name="sessionType" defaultValue={contact.form.typeOptions[0]}>
-            {contact.form.typeOptions.map((opt) => (
-              <option key={opt} value={opt}>
-                {opt}
-              </option>
-            ))}
-          </select>
+          <label id="sessionType-label">{contact.form.typeLabel}</label>
+          <Select
+            name="sessionType"
+            options={contact.form.typeOptions}
+            value={sessionType}
+            onChange={setSessionType}
+            ariaLabel={contact.form.typeLabel}
+          />
         </div>
 
         <div className="field field-textarea">

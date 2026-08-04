@@ -1,0 +1,86 @@
+.select {
+  position: relative;
+}
+
+.select-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  padding: 9px 2px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 15px;
+  color: var(--color-ink);
+  cursor: pointer;
+  transition: border-color var(--transition-fast);
+}
+
+.select-trigger:focus-visible {
+  outline: none;
+  border-bottom-color: var(--color-accent);
+}
+
+.select[data-open='true'] .select-trigger,
+.select-trigger[aria-expanded='true'] {
+  border-bottom-color: var(--color-accent);
+}
+
+.select-value {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.select-arrow {
+  flex-shrink: 0;
+  width: 10px;
+  height: 6px;
+  background: currentColor;
+  color: var(--color-muted);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat center;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath d='M1 1l4 4 4-4' fill='none' stroke='black' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E")
+    no-repeat center;
+  transition: transform var(--transition-fast);
+}
+
+.select-trigger[aria-expanded='true'] .select-arrow {
+  transform: rotate(180deg);
+}
+
+.select-panel {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  box-shadow: 0 12px 30px rgba(42, 37, 35, 0.12);
+  max-height: 240px;
+  overflow-y: auto;
+  outline: none;
+}
+
+.select-option {
+  padding: 10px 14px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 14px;
+  color: var(--color-ink);
+  cursor: pointer;
+}
+
+.select-option.is-highlighted {
+  background: var(--color-bg);
+}
+
+.select-option.is-selected {
+  color: var(--color-accent);
+}
