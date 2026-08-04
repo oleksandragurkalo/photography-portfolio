@@ -1,0 +1,25 @@
+:root {
+  /* Colors */
+  --color-bg: #fbf9f7;
+  --color-white: #ffffff;
+  --color-ink: #2a2523;
+  --color-muted: #9c9088;
+  --color-faint: #8c7f76;
+  --color-accent: #b5836c;
+  --color-border: #e9e3dc;
+  --color-placeholder-bg: #e9e3dc;
+  --color-footer-bg: #2a2523;
+  --color-footer-border: #4a3f3a;
+
+  /* Fonts */
+  --font-display: 'Poiret One', cursive;
+  --font-body: 'Montserrat', sans-serif;
+
+  /* Layout */
+  --nav-height: 76px;
+  --container-max: 1440px;
+  --container-pad: clamp(20px, 6vw, 96px);
+
+  /* Motion */
+  --transition-fast: 180ms ease;
+}
