@@ -11,6 +11,25 @@ export default function Layout() {
     window.scrollTo(0, 0);
   }, [location.pathname]);
 
+  useEffect(() => {
+    const vv = window.visualViewport;
+    if (!vv) return undefined;
+
+    const root = document.documentElement;
+    const syncViewportVars = () => {
+      root.style.setProperty('--vv-top', `${vv.offsetTop}px`);
+      root.style.setProperty('--vv-height', `${vv.height}px`);
+    };
+
+    syncViewportVars();
+    vv.addEventListener('resize', syncViewportVars);
+    vv.addEventListener('scroll', syncViewportVars);
+    return () => {
+      vv.removeEventListener('resize', syncViewportVars);
+      vv.removeEventListener('scroll', syncViewportVars);
+    };
+  }, []);
+
   return (
     <div className="site-shell">
       <Nav />

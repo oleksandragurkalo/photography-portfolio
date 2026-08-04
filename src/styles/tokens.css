@@ -22,4 +22,8 @@
 
   /* Motion */
   --transition-fast: 180ms ease;
+
+  /* Visible viewport (synced via JS to work around in-app browser chrome overlap) */
+  --vv-top: 0px;
+  --vv-height: 100dvh;
 }

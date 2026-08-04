@@ -1,6 +1,9 @@
 .lightbox {
   position: fixed;
-  inset: 0;
+  top: var(--vv-top, 0px);
+  left: 0;
+  right: 0;
+  height: var(--vv-height, 100dvh);
   z-index: 200;
   background: rgba(20, 17, 15, 0.92);
   backdrop-filter: blur(6px);
