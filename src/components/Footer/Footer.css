@@ -23,3 +23,13 @@
 .site-footer-instagram:hover {
   color: var(--color-accent);
 }
+
+@media (max-width: 600px) {
+  .site-footer-inner {
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding-block: 24px;
+  }
+}
