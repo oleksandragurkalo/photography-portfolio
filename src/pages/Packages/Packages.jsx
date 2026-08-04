@@ -2,6 +2,12 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import './Packages.css';
 
+const PORTFOLIO_CATEGORIES = {
+  portrait: 'portrait',
+  'love-story': 'loveStory',
+  family: 'family',
+};
+
 export default function Packages() {
   const { t } = useLanguage();
 
@@ -25,6 +31,12 @@ export default function Packages() {
                 </li>
               ))}
             </ul>
+            <Link
+              to={`/portfolio?category=${PORTFOLIO_CATEGORIES[tier.id]}`}
+              className="package-portfolio-link"
+            >
+              {t.packages.portfolioLink}
+            </Link>
             <Link to="/contact" className={`package-cta ${tier.popular ? 'is-filled' : ''}`}>
               {t.packages.cta}
             </Link>

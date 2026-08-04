@@ -75,6 +75,33 @@
   color: var(--color-accent);
 }
 
+.package-portfolio-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  align-self: center;
+  margin-bottom: 18px;
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  border-bottom: 1px solid transparent;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.package-portfolio-link::after {
+  content: '→';
+}
+
+@media (hover: hover) {
+  .package-portfolio-link:hover {
+    color: var(--color-accent);
+    border-bottom-color: var(--color-accent);
+  }
+}
+
 .package-cta {
   display: flex;
   align-items: center;

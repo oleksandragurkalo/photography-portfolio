@@ -78,6 +78,7 @@ export const translations = {
         },
       ],
       cta: 'Обрати',
+      portfolioLink: 'Як це виглядає',
       note: 'Кожен пакет можна адаптувати під ваші потреби — локацію, тривалість чи кількість учасників зйомки. Деталі та вартість узгоджуються індивідуально під час консультації.',
     },
     contact: {
@@ -174,7 +175,7 @@ export const translations = {
           tag: 'Najpopularniejsze',
         },
         {
-          id: 'rodzinna',
+          id: 'family',
           title: 'Rodzinna Sesja Zdjęciowa',
           subtitle: '2 godziny, do 2 lokalizacji / studio',
           features: ['Do 60 zdjęć po obróbce', '2 lokalizacje do wyboru', 'Konsultacja przed sesją'],
@@ -182,6 +183,7 @@ export const translations = {
         },
       ],
       cta: 'Wybierz',
+      portfolioLink: 'Jak to wygląda',
       note: 'Każdy pakiet można dopasować do Twoich potrzeb — lokalizacji, czasu trwania czy liczby uczestników sesji. Szczegóły i cena ustalane są indywidualnie podczas konsultacji.',
     },
     contact: {
