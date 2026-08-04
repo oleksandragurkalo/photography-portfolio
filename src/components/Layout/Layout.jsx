@@ -11,12 +11,12 @@ export default function Layout() {
   }, [location.pathname]);
 
   return (
-    <>
+    <div className="site-shell">
       <Nav />
-      <main>
+      <main className="site-main">
         <Outlet />
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
