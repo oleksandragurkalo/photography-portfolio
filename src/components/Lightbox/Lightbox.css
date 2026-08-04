@@ -69,9 +69,11 @@
   transition: background var(--transition-fast), border-color var(--transition-fast), transform var(--transition-fast);
 }
 
-.lightbox-icon-btn:hover {
-  background: rgba(255, 255, 255, 0.16);
-  border-color: rgba(255, 255, 255, 0.45);
+@media (hover: hover) {
+  .lightbox-icon-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-color: rgba(255, 255, 255, 0.45);
+  }
 }
 
 .lightbox-icon-btn:active {
@@ -130,8 +132,10 @@
   display: block;
 }
 
-.lightbox-thumb:hover {
-  opacity: 0.85;
+@media (hover: hover) {
+  .lightbox-thumb:hover {
+    opacity: 0.85;
+  }
 }
 
 .lightbox-thumb.is-active {
