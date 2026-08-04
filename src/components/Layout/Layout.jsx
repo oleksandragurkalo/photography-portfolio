@@ -2,6 +2,7 @@ import { Outlet, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import Nav from '../Nav/Nav.jsx';
 import Footer from '../Footer/Footer.jsx';
+import BackToTop from '../BackToTop/BackToTop.jsx';
 
 export default function Layout() {
   const location = useLocation();
@@ -17,6 +18,7 @@ export default function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <BackToTop />
     </div>
   );
 }
