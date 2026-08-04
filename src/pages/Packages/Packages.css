@@ -1,4 +1,4 @@
-.pricing-grid {
+.packages-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
@@ -6,7 +6,7 @@
   padding-bottom: 60px;
 }
 
-.price-card {
+.package-card {
   position: relative;
   background: var(--color-white);
   border: 1px solid var(--color-border);
@@ -15,11 +15,11 @@
   flex-direction: column;
 }
 
-.price-card.is-popular {
+.package-card.is-popular {
   border-color: var(--color-accent);
 }
 
-.price-tag {
+.package-tag {
   position: absolute;
   top: -13px;
   left: 50%;
@@ -35,7 +35,7 @@
   white-space: nowrap;
 }
 
-.price-title {
+.package-title {
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 18px;
@@ -45,44 +45,22 @@
   margin: 0;
 }
 
-.price-row {
-  display: flex;
-  align-items: baseline;
-  gap: 8px;
-  padding-top: 18px;
-  padding-bottom: 6px;
-}
-
-.price-value {
-  font-family: var(--font-body);
-  font-weight: 800;
-  font-size: 37px;
-  color: var(--color-accent);
-}
-
-.price-per {
-  font-family: var(--font-body);
-  font-weight: 400;
-  font-size: 14px;
-  color: var(--color-muted);
-}
-
-.price-subtitle {
+.package-subtitle {
   font-family: var(--font-body);
   font-weight: 300;
   font-size: 13px;
   color: var(--color-muted);
-  margin: 0 0 24px;
+  margin: 18px 0 24px;
 }
 
-.price-features {
+.package-features {
   list-style: none;
   margin: 0 0 26px;
   padding: 0;
   flex: 1;
 }
 
-.price-features li {
+.package-features li {
   display: flex;
   gap: 10px;
   padding: 10px 0;
@@ -93,11 +71,11 @@
   color: var(--color-ink);
 }
 
-.price-features .dash {
+.package-features .dash {
   color: var(--color-accent);
 }
 
-.price-cta {
+.package-cta {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,23 +90,23 @@
   transition: background var(--transition-fast), color var(--transition-fast);
 }
 
-.price-cta:hover {
+.package-cta:hover {
   background: var(--color-ink);
   color: var(--color-white);
 }
 
-.price-cta.is-filled {
+.package-cta.is-filled {
   background: var(--color-accent);
   border-color: var(--color-accent);
   color: var(--color-white);
 }
 
-.price-cta.is-filled:hover {
+.package-cta.is-filled:hover {
   background: var(--color-ink);
   border-color: var(--color-ink);
 }
 
-.pricing-note {
+.packages-note {
   max-width: 520px;
   text-align: center;
   font-family: var(--font-body);
@@ -140,7 +118,7 @@
 }
 
 @media (max-width: 900px) {
-  .pricing-grid {
+  .packages-grid {
     grid-template-columns: 1fr;
   }
 }

@@ -7,7 +7,7 @@ export const translations = {
       home: 'Головна',
       portfolio: 'Портфоліо',
       about: 'Про мене',
-      pricing: 'Ціни',
+      packages: 'Пакети',
       contact: 'Контакти',
     },
     footer: {
@@ -50,15 +50,13 @@ export const translations = {
       },
       photoPlaceholder: 'Фото Богдани — незабаром',
     },
-    pricing: {
-      kicker: 'Pricing',
+    packages: {
+      kicker: 'Packages',
       headline: 'Прозорі пакети без прихованих деталей — напишіть, якщо потрібно щось інше.',
       tiers: [
         {
           id: 'portrait',
           title: 'Портрет',
-          price: '€120',
-          per: '/ сесія',
           subtitle: '1 година, студія або відкрита локація',
           features: ['До 25 оброблених фото', '1 локація'],
           popular: false,
@@ -66,8 +64,6 @@ export const translations = {
         {
           id: 'love-story',
           title: 'Love Story',
-          price: '€250',
-          per: '/ сесія',
           subtitle: '2 години, до 2 локацій',
           features: ['До 60 оброблених фото', '2 локації на вибір', 'Консультація перед зйомкою'],
           popular: true,
@@ -76,15 +72,13 @@ export const translations = {
         {
           id: 'family',
           title: 'Сімейна зйомка',
-          price: '€300',
-          per: 'від',
           subtitle: '2 години, до 2 локацій / студія',
           features: ['До 60 оброблених фото', '2 локації на вибір', 'Консультація перед зйомкою'],
           popular: false,
         },
       ],
       cta: 'Обрати',
-      note: 'Ціни орієнтовні та можуть змінюватись залежно від локації, тривалості та кількості учасників зйомки. Фінальна вартість узгоджується індивідуально.',
+      note: 'Кожен пакет можна адаптувати під ваші потреби — локацію, тривалість чи кількість учасників зйомки. Деталі та вартість узгоджуються індивідуально під час консультації.',
     },
     contact: {
       kicker: 'Get In Touch',
@@ -118,7 +112,7 @@ export const translations = {
       home: 'Start',
       portfolio: 'Portfolio',
       about: 'O mnie',
-      pricing: 'Cennik',
+      packages: 'Pakiety',
       contact: 'Kontakt',
     },
     footer: {
@@ -160,15 +154,13 @@ export const translations = {
       },
       photoPlaceholder: 'Zdjęcie Bohdany — wkrótce',
     },
-    pricing: {
-      kicker: 'Pricing',
+    packages: {
+      kicker: 'Packages',
       headline: 'Przejrzyste pakiety bez ukrytych kosztów — napisz, jeśli potrzebujesz czegoś innego.',
       tiers: [
         {
           id: 'portrait',
           title: 'Portret',
-          price: '€120',
-          per: '/ sesja',
           subtitle: '1 godzina, studio lub plener',
           features: ['Do 25 zdjęć po obróbce', '1 lokalizacja'],
           popular: false,
@@ -176,8 +168,6 @@ export const translations = {
         {
           id: 'love-story',
           title: 'Love Story',
-          price: '€250',
-          per: '/ sesja',
           subtitle: '2 godziny, do 2 lokalizacji',
           features: ['Do 60 zdjęć po obróbce', '2 lokalizacje do wyboru', 'Konsultacja przed sesją'],
           popular: true,
@@ -186,15 +176,13 @@ export const translations = {
         {
           id: 'rodzinna',
           title: 'Rodzinna Sesja Zdjęciowa',
-          price: '€300',
-          per: '/ sesja',
           subtitle: '2 godziny, do 2 lokalizacji / studio',
           features: ['Do 60 zdjęć po obróbce', '2 lokalizacje do wyboru', 'Konsultacja przed sesją'],
           popular: false,
         },
       ],
       cta: 'Wybierz',
-      note: 'Ceny są orientacyjne i mogą się różnić w zależności od lokalizacji, czasu trwania i liczby uczestników sesji. Ostateczna cena jest ustalana indywidualnie.',
+      note: 'Każdy pakiet można dopasować do Twoich potrzeb — lokalizacji, czasu trwania czy liczby uczestników sesji. Szczegóły i cena ustalane są indywidualnie podczas konsultacji.',
     },
     contact: {
       kicker: 'Get In Touch',
