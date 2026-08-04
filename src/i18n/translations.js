@@ -64,8 +64,8 @@ export const translations = {
           tag: 'Найпопулярніше',
         },
         {
-          id: 'wedding',
-          title: 'Весілля',
+          id: 'family',
+          title: 'Сімейна зйомка',
           price: '€300',
           per: 'від',
           subtitle: '2 години, до 2 локацій / студія',
@@ -164,10 +164,10 @@ export const translations = {
           tag: 'Najpopularniejsze',
         },
         {
-          id: 'wedding',
-          title: 'Ślub',
+          id: 'rodzinna',
+          title: 'Rodzinna Sesja Zdjęciowa',
           price: '€300',
-          per: 'od',
+          per: '/ sesja',
           subtitle: '2 godziny, do 2 lokalizacji / studio',
           features: ['Do 60 zdjęć po obróbce', '2 lokalizacje do wyboru', 'Konsultacja przed sesją'],
           popular: false,
@@ -190,7 +190,7 @@ export const translations = {
         nameLabel: 'Imię',
         emailLabel: 'Email',
         typeLabel: 'Rodzaj sesji',
-        typeOptions: ['Portret', 'Love Story', 'Ślub', 'Inne'],
+        typeOptions: ['Portret', 'Love Story', 'Rodzinna Sesja Zdjęciowa', 'Inne'],
         visionLabel: 'Twoja wizja',
         visionPlaceholder: 'Lokalizacja, data, wszystko, co warto wiedzieć...',
         submit: 'Wyślij',
@@ -202,6 +202,5 @@ export const translations = {
   },
 };
 
-// export const CONTACT_EMAIL = 'hello@bohdanakosmyna.com'; // TODO: replace with Bohdana's real inquiry email
 export const INSTAGRAM_HANDLE = '@kosmee.kosmee';
 export const INSTAGRAM_URL = 'https://instagram.com/kosmee.kosmee';

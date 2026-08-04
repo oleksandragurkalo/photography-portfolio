@@ -18,7 +18,7 @@ export default function Pricing() {
             {tier.popular && <span className="price-tag">{tier.tag}</span>}
             <h3 className="price-title">{tier.title}</h3>
             <div className="price-row">
-              <span className="price-value">{tier.price}</span>
+              {/*<span className="price-value">{tier.price}</span>*/}
               <span className="price-per">{tier.per}</span>
             </div>
             <p className="price-subtitle">{tier.subtitle}</p>
