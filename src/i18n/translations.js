@@ -10,6 +10,7 @@ export const translations = {
     footer: {
       copyright: '© 2026 Bohdana Kosmyna Photography',
       location: 'Лодзь, Польща',
+      instagram: 'Instagram',
     },
     home: {
       kicker: 'Photographer',
@@ -23,6 +24,12 @@ export const translations = {
     portfolio: {
       kicker: 'Selected Work',
       headline: 'Кожна історія — своя, і кожна варта того, щоб її розповіли чесно.',
+      filters: {
+        all: 'Усі',
+        portrait: 'Портрет',
+        loveStory: 'Love Story',
+        family: 'Сімейна зйомка',
+      },
     },
     about: {
       kicker: 'Про мене',
@@ -111,6 +118,7 @@ export const translations = {
     footer: {
       copyright: '© 2026 Bohdana Kosmyna Photography',
       location: 'Łódź, Polska',
+      instagram: 'Instagram',
     },
     home: {
       kicker: 'Photographer',
@@ -124,6 +132,12 @@ export const translations = {
     portfolio: {
       kicker: 'Selected Work',
       headline: 'Każda historia jest inna i każda zasługuje na to, by opowiedzieć ją szczerze.',
+      filters: {
+        all: 'Wszystko',
+        portrait: 'Portret',
+        loveStory: 'Love Story',
+        family: 'Sesja Rodzinna',
+      },
     },
     about: {
       kicker: 'O mnie',
