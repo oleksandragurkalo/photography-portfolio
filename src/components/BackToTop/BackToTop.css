@@ -1,7 +1,7 @@
 .back-to-top {
   position: fixed;
-  right: 24px;
-  bottom: 24px;
+  right: max(24px, env(safe-area-inset-right, 0px));
+  bottom: calc(24px + env(safe-area-inset-bottom, 0px));
   z-index: 40;
   width: 44px;
   height: 44px;
@@ -37,8 +37,8 @@
 
 @media (max-width: 600px) {
   .back-to-top {
-    right: 16px;
-    bottom: 16px;
+    right: max(16px, env(safe-area-inset-right, 0px));
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
     width: 40px;
     height: 40px;
   }
