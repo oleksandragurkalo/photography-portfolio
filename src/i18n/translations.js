@@ -10,6 +10,7 @@ export const translations = {
     footer: {
       copyright: '© 2026 Bohdana Kosmyna Photography',
       location: 'Лодзь, Польща',
+      instagram: 'Instagram',
     },
     home: {
       kicker: 'Photographer',
@@ -23,6 +24,12 @@ export const translations = {
     portfolio: {
       kicker: 'Selected Work',
       headline: 'Кожна історія — своя, і кожна варта того, щоб її розповіли чесно.',
+      filters: {
+        all: 'Усі',
+        portrait: 'Портрет',
+        loveStory: 'Love Story',
+        family: 'Сімейна зйомка',
+      },
     },
     about: {
       kicker: 'Про мене',
@@ -64,8 +71,8 @@ export const translations = {
           tag: 'Найпопулярніше',
         },
         {
-          id: 'wedding',
-          title: 'Весілля',
+          id: 'family',
+          title: 'Сімейна зйомка',
           price: '€300',
           per: 'від',
           subtitle: '2 години, до 2 локацій / студія',
@@ -111,6 +118,7 @@ export const translations = {
     footer: {
       copyright: '© 2026 Bohdana Kosmyna Photography',
       location: 'Łódź, Polska',
+      instagram: 'Instagram',
     },
     home: {
       kicker: 'Photographer',
@@ -124,6 +132,12 @@ export const translations = {
     portfolio: {
       kicker: 'Selected Work',
       headline: 'Każda historia jest inna i każda zasługuje na to, by opowiedzieć ją szczerze.',
+      filters: {
+        all: 'Wszystko',
+        portrait: 'Portret',
+        loveStory: 'Love Story',
+        family: 'Sesja Rodzinna',
+      },
     },
     about: {
       kicker: 'O mnie',
@@ -164,10 +178,10 @@ export const translations = {
           tag: 'Najpopularniejsze',
         },
         {
-          id: 'wedding',
-          title: 'Ślub',
+          id: 'rodzinna',
+          title: 'Rodzinna Sesja Zdjęciowa',
           price: '€300',
-          per: 'od',
+          per: '/ sesja',
           subtitle: '2 godziny, do 2 lokalizacji / studio',
           features: ['Do 60 zdjęć po obróbce', '2 lokalizacje do wyboru', 'Konsultacja przed sesją'],
           popular: false,
@@ -190,7 +204,7 @@ export const translations = {
         nameLabel: 'Imię',
         emailLabel: 'Email',
         typeLabel: 'Rodzaj sesji',
-        typeOptions: ['Portret', 'Love Story', 'Ślub', 'Inne'],
+        typeOptions: ['Portret', 'Love Story', 'Rodzinna Sesja Zdjęciowa', 'Inne'],
         visionLabel: 'Twoja wizja',
         visionPlaceholder: 'Lokalizacja, data, wszystko, co warto wiedzieć...',
         submit: 'Wyślij',
@@ -202,6 +216,5 @@ export const translations = {
   },
 };
 
-// export const CONTACT_EMAIL = 'hello@bohdanakosmyna.com'; // TODO: replace with Bohdana's real inquiry email
 export const INSTAGRAM_HANDLE = '@kosmee.kosmee';
 export const INSTAGRAM_URL = 'https://instagram.com/kosmee.kosmee';

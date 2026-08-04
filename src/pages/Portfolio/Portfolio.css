@@ -1,3 +1,35 @@
+.portfolio-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 28px;
+  padding-bottom: 50px;
+}
+
+.portfolio-filter {
+  background: none;
+  border: none;
+  border-bottom: 1px solid transparent;
+  padding: 4px 2px 6px;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  cursor: pointer;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.portfolio-filter:hover {
+  color: var(--color-ink);
+}
+
+.portfolio-filter.is-active {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
 .gallery {
   column-count: 4;
   column-gap: 20px;

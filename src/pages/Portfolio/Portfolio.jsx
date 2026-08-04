@@ -1,42 +1,18 @@
+import { useMemo, useState } from 'react';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
-import portraitTerracotta from '../../assets/images/portrait-terracotta-wall.jpg';
-import familyStorytime from '../../assets/images/family-storytime.jpg';
-import portraitWindowLight01 from '../../assets/images/portrait-window-light-01.jpg';
-import familyCheekKiss from '../../assets/images/family-cheek-kiss.jpg';
-import portraitWindowLight02 from '../../assets/images/portrait-window-light-02.jpg';
-import goldenHourLoveStory01 from '../../assets/images/golden-hour-love-story-01.jpg';
-import goldenHourLoveStory02 from '../../assets/images/golden-hour-love-story-02.jpg';
-import goldenHourLoveStory03 from '../../assets/images/golden-hour-love-story-03.jpg';
-import goldenHourLoveStory04 from '../../assets/images/golden-hour-love-story-04.jpg';
-import goldenHourLoveStory05 from '../../assets/images/golden-hour-love-story-05.jpg';
-import goldenHourLoveStory06 from '../../assets/images/golden-hour-love-story-06.jpg';
-import goldenHourLoveStory07 from '../../assets/images/golden-hour-love-story-07.jpg';
-import goldenHourLoveStory08 from '../../assets/images/golden-hour-love-story-08.jpg';
-import goldenHourLoveStory09 from '../../assets/images/golden-hour-love-story-09.jpg';
-import goldenHourLoveStory10 from '../../assets/images/golden-hour-love-story-10.jpg';
+import { portfolioImages } from '../../data/portfolioImages.js';
 import './Portfolio.css';
 
-// Deliberately interleaved — the portfolio is one continuous flow, not split by shoot type.
-const images = [
-  familyStorytime,
-  portraitWindowLight01,
-  goldenHourLoveStory06,
-  goldenHourLoveStory07,
-  goldenHourLoveStory08,
-  goldenHourLoveStory09,
-  portraitTerracotta,
-  goldenHourLoveStory10,
-  familyCheekKiss,
-  portraitWindowLight02,
-  goldenHourLoveStory01,
-  goldenHourLoveStory02,
-  goldenHourLoveStory03,
-  goldenHourLoveStory04,
-  goldenHourLoveStory05,
-];
+const CATEGORIES = ['all', 'portrait', 'loveStory', 'family'];
 
 export default function Portfolio() {
   const { t } = useLanguage();
+  const [active, setActive] = useState('all');
+
+  const visible = useMemo(
+    () => (active === 'all' ? portfolioImages : portfolioImages.filter((img) => img.category === active)),
+    [active],
+  );
 
   return (
     <div className="portfolio">
@@ -45,10 +21,23 @@ export default function Portfolio() {
         <h1 className="headline-italic">{t.portfolio.headline}</h1>
       </div>
 
+      <div className="portfolio-filters container">
+        {CATEGORIES.map((cat) => (
+          <button
+            key={cat}
+            type="button"
+            className={`portfolio-filter ${active === cat ? 'is-active' : ''}`}
+            onClick={() => setActive(cat)}
+          >
+            {t.portfolio.filters[cat]}
+          </button>
+        ))}
+      </div>
+
       <div className="gallery container">
-        {images.map((src, i) => (
-          <div className="gallery-item" key={src}>
-            <img src={src} alt="" loading={i < 3 ? 'eager' : 'lazy'} />
+        {visible.map((img, i) => (
+          <div className="gallery-item" key={img.src}>
+            <img src={img.src} alt="" loading={i < 3 ? 'eager' : 'lazy'} />
           </div>
         ))}
       </div>
