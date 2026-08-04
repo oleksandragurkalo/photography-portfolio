@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import { portfolioImages } from '../../data/portfolioImages.js';
 import Lightbox from '../../components/Lightbox/Lightbox.jsx';
@@ -8,7 +9,9 @@ const CATEGORIES = ['all', 'portrait', 'loveStory', 'family'];
 
 export default function Portfolio() {
   const { t } = useLanguage();
-  const [active, setActive] = useState('all');
+  const [searchParams] = useSearchParams();
+  const initialCategory = searchParams.get('category');
+  const [active, setActive] = useState(CATEGORIES.includes(initialCategory) ? initialCategory : 'all');
   const [openIndex, setOpenIndex] = useState(null);
 
   const visible = useMemo(
