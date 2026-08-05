@@ -1,6 +1,8 @@
 .nav {
-  position: sticky;
+  position: fixed;
   top: var(--vv-top, 0px);
+  left: 0;
+  right: 0;
   z-index: 50;
   padding-top: max(env(safe-area-inset-top, 0px), var(--inapp-chrome-buffer, 0px));
   background: rgba(251, 249, 247, 0.95);
