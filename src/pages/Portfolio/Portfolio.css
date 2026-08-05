@@ -37,18 +37,18 @@
 
 .cover-label {
   font-family: var(--font-body), sans-serif;
-  font-weight: 500;
-  font-size: 11px;
+  font-weight: 600;
+  font-size: 16px;
   letter-spacing: 1.3px;
   text-transform: uppercase;
-  color: var(--color-muted);
+  color: var(--color-ink);
   text-align: center;
   transition: color var(--transition-fast);
 }
 
 @media (hover: hover) {
   .cover-tile:hover .cover-label {
-    color: var(--color-ink);
+    color: var(--color-accent);
   }
 }
 
