@@ -10,7 +10,8 @@ export default function Contact() {
   const { t, lang } = useLanguage();
   const { contact } = t;
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
-  const [sessionType, setSessionType] = useState(contact.form.typeOptions[0]);
+  const [sessionTypeIndex, setSessionTypeIndex] = useState(0);
+  const sessionType = contact.form.typeOptions[sessionTypeIndex];
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -91,7 +92,7 @@ export default function Contact() {
             name="sessionType"
             options={contact.form.typeOptions}
             value={sessionType}
-            onChange={setSessionType}
+            onChange={(next) => setSessionTypeIndex(contact.form.typeOptions.indexOf(next))}
             ariaLabel={contact.form.typeLabel}
           />
         </div>

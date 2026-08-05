@@ -2,6 +2,11 @@ export const translations = {
   ua: {
     common: {
       backToTop: 'Догори',
+      pageError: {
+        title: 'Щось пішло не так',
+        body: 'Спробуйте оновити сторінку або повернутися на головну.',
+        cta: 'На головну',
+      },
     },
     nav: {
       home: 'Головна',
@@ -18,11 +23,6 @@ export const translations = {
     home: {
       kicker: 'Photographer',
       headline: 'Щирі та живі історії про вас — у теплому, природньому світлі.',
-      featured: [
-        { caption: 'Golden Hour' },
-        { caption: 'Window Light' },
-        { caption: 'Quiet Moments' },
-      ],
     },
     portfolio: {
       kicker: 'Selected Work',
@@ -33,6 +33,8 @@ export const translations = {
         loveStory: 'Love Story',
         family: 'Сімейна зйомка',
       },
+      back: 'Усі формати',
+      backToShoots: 'Усі зйомки',
     },
     about: {
       kicker: 'Про мене',
@@ -108,6 +110,11 @@ export const translations = {
   pl: {
     common: {
       backToTop: 'Do góry',
+      pageError: {
+        title: 'Coś poszło nie tak',
+        body: 'Spróbuj odświeżyć stronę lub wrócić na stronę główną.',
+        cta: 'Strona główna',
+      },
     },
     nav: {
       home: 'Start',
@@ -124,11 +131,6 @@ export const translations = {
     home: {
       kicker: 'Photographer',
       headline: 'Szczere i żywe historie o Was — w ciepłym, naturalnym świetle.',
-      featured: [
-        { caption: 'Golden Hour' },
-        { caption: 'Window Light' },
-        { caption: 'Quiet Moments' },
-      ],
     },
     portfolio: {
       kicker: 'Selected Work',
@@ -139,6 +141,8 @@ export const translations = {
         loveStory: 'Love Story',
         family: 'Sesja Rodzinna',
       },
+      back: 'Wszystkie formaty',
+      backToShoots: 'Wszystkie sesje',
     },
     about: {
       kicker: 'O mnie',

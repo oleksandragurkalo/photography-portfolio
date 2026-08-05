@@ -9,7 +9,7 @@ export default function About() {
   return (
     <div className="about container">
       <div className="about-photo">
-        <img src={aboutPhoto} alt="about" />
+        <img src={aboutPhoto} alt={about.name} />
       </div>
 
       <div className="about-content">

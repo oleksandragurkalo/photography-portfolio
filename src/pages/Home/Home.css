@@ -1,29 +1,95 @@
-.featured {
+.hero {
+  position: relative;
+  height: 78vh;
+  min-height: 420px;
+  overflow: hidden;
+  margin-bottom: 90px;
+}
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 1200ms ease;
+}
+
+.hero-slide.is-active {
+  opacity: 1;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-content {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+  padding-inline: var(--container-pad);
+}
+
+.hero-content .kicker {
+  color: var(--color-white);
+  opacity: 0.9;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content .headline-italic {
+  color: var(--color-white);
+  font-size: clamp(28px, 5vw, 48px);
+  max-width: 760px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+}
+
+.highlights-title {
+  display: block;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  text-align: center;
+  margin-bottom: 30px;
+  transition: color var(--transition-fast);
+}
+
+.highlights-title:hover {
+  color: var(--color-accent);
+}
+
+.highlights {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  padding-bottom: 90px;
+  padding-bottom: 100px;
 }
 
-.featured-item {
-  margin: 0;
+.highlight-tile {
   display: flex;
   flex-direction: column;
   gap: 14px;
 }
 
-.featured-imgbox {
+.highlight-imgbox {
   aspect-ratio: 4 / 5;
   overflow: hidden;
   background: var(--color-placeholder-bg);
   display: block;
   width: 100%;
-  border: none;
-  padding: 0;
-  cursor: pointer;
 }
 
-.featured-imgbox img {
+.highlight-imgbox img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -31,13 +97,13 @@
 }
 
 @media (hover: hover) {
-  .featured-imgbox:hover img {
-    transform: scale(1.04);
+  .highlight-tile:hover .highlight-imgbox img {
+    transform: scale(1.24);
   }
 }
 
-.featured-item figcaption {
-  font-family: var(--font-body);
+.highlight-label {
+  font-family: var(--font-body), sans-serif;
   font-weight: 500;
   font-size: 11px;
   letter-spacing: 1.5px;
@@ -47,7 +113,12 @@
 }
 
 @media (max-width: 860px) {
-  .featured {
+  .hero {
+    height: min(60vh, 560px);
+    margin-bottom: 60px;
+  }
+
+  .highlights {
     grid-template-columns: 1fr;
     gap: 40px;
     padding-bottom: 60px;

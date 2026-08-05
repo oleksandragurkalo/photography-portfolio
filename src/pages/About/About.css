@@ -17,7 +17,7 @@
 }
 
 .about-photo span {
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-size: 12px;
   letter-spacing: 0.6px;
   color: var(--color-muted);
@@ -31,7 +31,7 @@
 }
 
 .about-name {
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-weight: 800;
   font-size: 29px;
   text-transform: uppercase;
@@ -40,7 +40,7 @@
 }
 
 .about-p {
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-weight: 300;
   font-size: 16px;
   line-height: 1.9;
@@ -67,7 +67,7 @@
 }
 
 .about-fact-label {
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-weight: 300;
   font-size: 11px;
   letter-spacing: 1px;
@@ -77,7 +77,7 @@
 }
 
 .about-fact-value {
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-weight: 600;
   font-size: 15px;
   color: var(--color-accent);

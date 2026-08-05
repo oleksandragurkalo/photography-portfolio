@@ -1,6 +1,8 @@
 .nav {
-  position: sticky;
+  position: fixed;
   top: var(--vv-top, 0px);
+  left: 0;
+  right: 0;
   z-index: 50;
   padding-top: max(env(safe-area-inset-top, 0px), var(--inapp-chrome-buffer, 0px));
   background: rgba(251, 249, 247, 0.95);
@@ -18,7 +20,7 @@
 }
 
 .nav-logo {
-  font-family: var(--font-display);
+  font-family: var(--font-display), sans-serif;
   font-size: 20px;
   letter-spacing: 1.6px;
   color: var(--color-ink);
@@ -34,7 +36,7 @@
 }
 
 .nav-link {
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-weight: 500;
   font-size: 11px;
   letter-spacing: 1.3px;
@@ -65,7 +67,7 @@
   border: none;
   border-bottom: 1px solid transparent;
   padding: 4px 4px 5px;
-  font-family: var(--font-body);
+  font-family: var(--font-body), sans-serif;
   font-weight: 600;
   font-size: 11px;
   letter-spacing: 0.9px;
