@@ -20,7 +20,7 @@
 }
 
 .nav-logo {
-  font-family: var(--font-display);
+  font-family: var(--font-display), sans-serif;
   font-size: 20px;
   letter-spacing: 1.6px;
   color: var(--color-ink);
