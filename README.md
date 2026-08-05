@@ -40,9 +40,10 @@ On Vercel, set the same variable in Project Settings → Environment Variables.
 ```
 src/
   assets/images/   Portfolio and hero photos
-  components/      Shared layout pieces (Nav, Footer, Layout)
+  components/      Shared UI (Nav, Footer, Layout, Lightbox, Select, BackToTop, ErrorBoundary)
+  data/            Portfolio categories/shoots data model
   i18n/            Language context + UA/PL translation strings
-  pages/           Route-level pages (Home, Portfolio, About, Pricing, Contact)
+  pages/           Route-level pages (Home, Portfolio, About, Packages, Contact)
   styles/          Global styles and design tokens
 ```
 
