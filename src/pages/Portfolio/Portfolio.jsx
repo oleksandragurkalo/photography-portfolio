@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { useLanguage } from '../../i18n/LanguageContext.jsx';
 import { shoots, shootsByCategory, findShoot } from '../../data/portfolioImages.js';
@@ -6,6 +6,58 @@ import Lightbox from '../../components/Lightbox/Lightbox.jsx';
 import './Portfolio.css';
 
 const CATEGORIES = Object.keys(shoots);
+
+// Sets each tile's grid-row-end span from its rendered image height, so
+// grid-auto-flow: dense can pack tiles like masonry with no leftover gaps,
+// regardless of photo count or aspect-ratio mix.
+function useMasonryLayout(deps) {
+  const gridRef = useRef(null);
+
+  useLayoutEffect(() => {
+    const grid = gridRef.current;
+    if (!grid) return undefined;
+
+    function layoutItem(item) {
+      const img = item.querySelector('img');
+      if (!img) return;
+      const rowHeight = parseFloat(getComputedStyle(grid).gridAutoRows);
+      const marginBottom = parseFloat(getComputedStyle(item).marginBottom);
+      const contentHeight = img.getBoundingClientRect().height + marginBottom;
+      const rowSpan = Math.ceil(contentHeight / rowHeight);
+      item.style.gridRowEnd = `span ${rowSpan}`;
+    }
+
+    function layoutAll() {
+      Array.from(grid.children).forEach(layoutItem);
+    }
+
+    layoutAll();
+
+    const images = Array.from(grid.querySelectorAll('img'));
+    const pendingImages = images.filter((img) => !img.complete);
+    function onImageLoad(event) {
+      const item = event.target.closest('.gallery-item');
+      if (item) layoutItem(item);
+    }
+    pendingImages.forEach((img) => img.addEventListener('load', onImageLoad));
+
+    let resizeTimer;
+    function onResize() {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(layoutAll, 100);
+    }
+    window.addEventListener('resize', onResize);
+
+    return () => {
+      pendingImages.forEach((img) => img.removeEventListener('load', onImageLoad));
+      window.removeEventListener('resize', onResize);
+      clearTimeout(resizeTimer);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, deps);
+
+  return gridRef;
+}
 
 export default function Portfolio() {
   const { t } = useLanguage();
@@ -19,6 +71,8 @@ export default function Portfolio() {
   const shoot = category ? findShoot(category, shootParam) : null;
 
   const shootsInCategory = useMemo(() => (category ? shootsByCategory(category) : []), [category]);
+
+  const galleryRef = useMasonryLayout([shoot]);
 
   function openCategory(cat) {
     setOpenIndex(null);
@@ -90,7 +144,7 @@ export default function Portfolio() {
             </button>
           </div>
 
-          <div className="gallery container">
+          <div className="gallery container" ref={galleryRef}>
             {shoot.photos.map((img, i) => (
               <button
                 type="button"

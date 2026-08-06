@@ -1,16 +1,6 @@
 import portraitTerracotta from '../assets/images/portrait/terracotta-wall.jpg';
 import portraitWindowLight01 from '../assets/images/portrait/window-light-01.jpg';
 import portraitWindowLight02 from '../assets/images/portrait/window-light-02.jpg';
-import loveStory01 from '../assets/images/love-story/golden-hour-01.jpg';
-import loveStory02 from '../assets/images/love-story/golden-hour-02.jpg';
-import loveStory03 from '../assets/images/love-story/golden-hour-03.jpg';
-import loveStory04 from '../assets/images/love-story/golden-hour-04.jpg';
-import loveStory05 from '../assets/images/love-story/golden-hour-05.jpg';
-import loveStory06 from '../assets/images/love-story/golden-hour-06.jpg';
-import loveStory07 from '../assets/images/love-story/golden-hour-07.jpg';
-import loveStory08 from '../assets/images/love-story/golden-hour-08.jpg';
-import loveStory09 from '../assets/images/love-story/golden-hour-09.jpg';
-import loveStory10 from '../assets/images/love-story/golden-hour-10.jpg';
 import familyCheekKiss from '../assets/images/family/cheek-kiss.jpg';
 import familyStorytime from '../assets/images/family/storytime.jpg';
 import varvara01 from '../assets/images/family/varvara-01.jpg';
@@ -27,6 +17,20 @@ function photosFrom(srcs) {
   return srcs.map((src) => ({ src }));
 }
 
+// Each love-story shoot's photos live under assets as `<shootId>-NN.jpg`.
+const loveStoryImageModules = import.meta.glob('../assets/images/love-story/*.jpg', {
+  eager: true,
+  import: 'default',
+});
+
+function loveStoryPhotosFor(shootId) {
+  const pattern = new RegExp(`/love-story/${shootId}-\\d+\\.jpg$`);
+  return Object.keys(loveStoryImageModules)
+    .filter((path) => pattern.test(path))
+    .sort()
+    .map((path) => ({ src: loveStoryImageModules[path] }));
+}
+
 // Placeholder shoot groupings — real shoot names/photos to replace these later.
 export const shoots = {
   portrait: [
@@ -38,17 +42,17 @@ export const shoots = {
     {
       id: 'daryna-oleksii',
       name: 'Daryna & Oleksii',
-      photos: photosFrom([loveStory01, loveStory02, loveStory03, loveStory04]),
+      photos: loveStoryPhotosFor('daryna-oleksii'),
     },
     {
       id: 'vitaliia-maksym',
       name: 'Vitaliia & Maksym',
-      photos: photosFrom([loveStory05, loveStory06, loveStory07]),
+      photos: loveStoryPhotosFor('vitaliia-maksym'),
     },
     {
       id: 'anastasiia-andrii',
       name: 'Anastasiia & Andrii',
-      photos: photosFrom([loveStory08, loveStory09, loveStory10]),
+      photos: loveStoryPhotosFor('anastasiia-andrii'),
     },
   ],
   family: [
