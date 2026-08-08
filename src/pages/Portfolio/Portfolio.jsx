@@ -23,7 +23,9 @@ function useMasonryLayout(deps) {
       const rowHeight = parseFloat(getComputedStyle(grid).gridAutoRows);
       const marginBottom = parseFloat(getComputedStyle(item).marginBottom);
       const contentHeight = img.getBoundingClientRect().height + marginBottom;
-      const rowSpan = Math.ceil(contentHeight / rowHeight);
+      // Round to nearest (not up) so quantization error stays near zero on
+      // average instead of compounding down a column as more tiles stack.
+      const rowSpan = Math.round(contentHeight / rowHeight);
       item.style.gridRowEnd = `span ${rowSpan}`;
     }
 
@@ -153,7 +155,7 @@ export default function Portfolio() {
                 onClick={() => setOpenIndex(i)}
                 aria-label={shoot.name}
               >
-                <img src={img.src} alt="" loading={i < 3 ? 'eager' : 'lazy'} />
+                <img src={img.src} alt="" loading="eager" />
               </button>
             ))}
           </div>
