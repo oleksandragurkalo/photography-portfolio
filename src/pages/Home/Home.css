@@ -112,6 +112,102 @@
   text-align: center;
 }
 
+.testimonials-head {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  padding-bottom: 50px;
+}
+
+.testimonials-head .headline-italic {
+  font-size: clamp(24px, 3.5vw, 34px);
+}
+
+.testimonials-track {
+  padding-inline: var(--container-pad);
+  padding-top: 40px;
+  padding-bottom: 100px;
+}
+
+.testimonials-scroller {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px 36px;
+  max-width: 1100px;
+  margin-inline: auto;
+}
+
+.testimonial-note {
+  position: relative;
+  flex: 1 1 260px;
+  max-width: 320px;
+  background: var(--color-white);
+  padding: 36px 24px 24px;
+  margin: 0;
+  box-shadow: 0 16px 30px rgba(42, 37, 35, 0.14);
+  transform: rotate(-2.5deg);
+  transition: transform 250ms ease, box-shadow 250ms ease;
+}
+
+.testimonial-note:nth-child(3n - 1) {
+  transform: rotate(2.5deg);
+}
+
+.testimonial-note:nth-child(3n) {
+  transform: rotate(-1deg);
+  margin-top: 22px;
+}
+
+@media (hover: hover) {
+  .testimonial-note:hover {
+    transform: rotate(0deg) translateY(-6px);
+    box-shadow: 0 22px 40px rgba(42, 37, 35, 0.2);
+    z-index: 1;
+  }
+}
+
+.testimonial-tape {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 64px;
+  height: 24px;
+  transform: translateX(-50%) rotate(-4deg);
+  background: rgba(181, 131, 108, 0.35);
+  box-shadow: 0 1px 2px rgba(42, 37, 35, 0.1);
+}
+
+.testimonial-mark {
+  display: block;
+  font-family: var(--font-display), sans-serif;
+  font-size: 42px;
+  line-height: 0.5;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+
+.testimonial-text {
+  font-family: var(--font-body), sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-ink);
+  white-space: pre-line;
+  margin: 18px 0;
+}
+
+.testimonial-author {
+  font-family: var(--font-display), sans-serif;
+  font-size: 16px;
+  color: var(--color-accent);
+  border-top: 1px dashed var(--color-border);
+  padding-top: 10px;
+  margin: 0;
+}
+
 @media (max-width: 860px) {
   .hero {
     height: min(60vh, 560px);
@@ -122,5 +218,26 @@
     grid-template-columns: 1fr;
     gap: 40px;
     padding-bottom: 60px;
+  }
+
+  .testimonials-track {
+    padding-top: 30px;
+    padding-bottom: 60px;
+  }
+
+  .testimonials-scroller {
+    gap: 30px 24px;
+  }
+
+  .testimonial-note {
+    flex-basis: 100%;
+    max-width: 360px;
+  }
+
+  .testimonial-note,
+  .testimonial-note:nth-child(3n - 1),
+  .testimonial-note:nth-child(3n) {
+    transform: rotate(-1deg);
+    margin-top: 0;
   }
 }

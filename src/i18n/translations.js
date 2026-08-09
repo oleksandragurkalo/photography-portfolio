@@ -23,6 +23,28 @@ export const translations = {
     home: {
       kicker: 'Photographer',
       headline: 'Щирі та живі історії про вас — у теплому, природньому світлі.',
+      testimonials: {
+        kicker: 'Відгуки',
+        headline: 'Те, що пишуть після зйомки',
+        quotes: [
+          {
+            text: 'Ааааа, божееее, які неймовірні фото 😍😍\nДякую, дякую, дякую 😻😻😻\n\nТакі милі, такі щирі, такі теплііі 😌\nТи просто чудо, дякую за твоє бачення нас 🥺🥺🥺♥️',
+            author: 'Дарина',
+          },
+          {
+            text: 'Привіт 🫶🏻\nНу що сказати….\nЦе просто вау! Дійсно дуже крута вийшла серія, і чбшечка і колір - прям в саме серденько 😎💜\nДуже дуже вдячна тобі, шо так гарно мене побачила 🫶🏻',
+            author: 'Катерина',
+          },
+          {
+            text: 'Привітик) Пропустила, перепрошую)\nМи не можемо надивитися на фотки, ну дуже гарні, плануємо собі роздрукувати) Тож не дарма міняли локацію, дуже тобі дякуємо за твою працю 🤍🤍🤍',
+            author: 'Віталіна',
+          },
+          {
+            text: 'Привітик, вау, біжу дивитись ❤️‍🔥\nФото дуже гарні, я в захваті 😍\nособливо ті, де промінчики сонечка - прям кайфові🥹\nДякую тобі за те, що побачила\nнас такими☺️',
+            author: 'Анастасія',
+          },
+        ],
+      },
     },
     portfolio: {
       kicker: 'Selected Work',
@@ -131,6 +153,28 @@ export const translations = {
     home: {
       kicker: 'Photographer',
       headline: 'Szczere i żywe historie o Was — w ciepłym, naturalnym świetle.',
+      testimonials: {
+        kicker: 'Opinie',
+        headline: 'To, co piszą po sesji',
+        quotes: [
+          {
+            text: 'Aaaaa, boże, jakie niesamowite zdjęcia 😍😍\nDziękuję, dziękuję, dziękuję 😻😻😻\n\nTakie słodkie, takie szczere, takie ciepłe 😌\nJesteś po prostu cudowna, dziękuję za Twoje spojrzenie na nas 🥺🥺🥺♥️',
+            author: 'Daryna',
+          },
+          {
+            text: 'Cześć 🫶🏻\nNo co tu dużo mówić….\nTo po prostu wow! Naprawdę super wyszła seria, a czerń i biel, i kolor — prosto w serducho 😎💜\nBardzo, bardzo Ci dziękuję, że tak pięknie mnie uchwyciłaś 🫶🏻',
+            author: 'Kateryna',
+          },
+          {
+            text: 'Cześć) Przegapiłam, przepraszam)\nNie możemy się napatrzeć na zdjęcia, są naprawdę piękne, planujemy je sobie wydrukować) Więc nie na darmo zmienialiśmy lokalizację, bardzo dziękujemy za Twoją pracę 🤍🤍🤍',
+            author: 'Vitaliia',
+          },
+          {
+            text: 'Cześć, wow, biegnę oglądać ❤️‍🔥\nZdjęcia są bardzo piękne, jestem zachwycona 😍\nzwłaszcza te, gdzie promyki słońca — po prostu super 🥹\nDziękuję Ci za to, że zobaczyłaś\nnas takimi, jacy jesteśmy ☺️',
+            author: 'Anastasiia',
+          },
+        ],
+      },
     },
     portfolio: {
       kicker: 'Selected Work',
