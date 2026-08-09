@@ -66,6 +66,23 @@ export default function Home() {
           </Link>
         ))}
       </div>
+
+      <div className="testimonials-head container">
+        <p className="kicker">{t.home.testimonials.kicker}</p>
+        <h2 className="headline-italic">{t.home.testimonials.headline}</h2>
+      </div>
+
+      <div className="testimonials-track">
+        <div className="testimonials-scroller">
+          {t.home.testimonials.quotes.map((quote) => (
+            <blockquote className="testimonial-note" key={quote.text}>
+              <span className="testimonial-tape" aria-hidden="true" />
+              <p className="testimonial-text">{quote.text}</p>
+              {quote.author && <footer className="testimonial-author">{quote.author}</footer>}
+            </blockquote>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
