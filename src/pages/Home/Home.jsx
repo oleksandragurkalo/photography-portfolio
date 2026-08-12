@@ -8,6 +8,12 @@ import varvara03_900 from '../../assets/images/family/varvara-03-900.webp';
 import varvara03_1920 from '../../assets/images/family/varvara-03-1920.webp';
 import varvara07_900 from '../../assets/images/family/varvara-07-900.webp';
 import varvara07_1920 from '../../assets/images/family/varvara-07-1920.webp';
+import darynaOleksii900 from '../../assets/images/love-story/daryna-oleksii-01-900.webp';
+import darynaOleksii1920 from '../../assets/images/love-story/daryna-oleksii-01-1920.webp';
+import terracotta900 from '../../assets/images/portrait/terracotta-wall-900.webp';
+import terracotta1920 from '../../assets/images/portrait/terracotta-wall-1920.webp';
+import storytime900 from '../../assets/images/family/storytime-900.webp';
+import storytime1920 from '../../assets/images/family/storytime-1920.webp';
 import './Home.css';
 
 const HERO_IMAGES = [
@@ -17,10 +23,24 @@ const HERO_IMAGES = [
 ];
 const SLIDE_INTERVAL_MS = 4000;
 
+// Dedicated compressed thumbnails for the small highlight tiles, kept separate
+// from the full-resolution source photos still used in the Portfolio gallery.
 const HIGHLIGHTS = [
-  { category: 'loveStory', shootId: 'daryna-oleksii' },
-  { category: 'portrait', shootId: 'mariia' },
-  { category: 'family', shootId: 'urodyny-varvary' },
+  {
+    category: 'loveStory',
+    shootId: 'daryna-oleksii',
+    thumb: { src: darynaOleksii1920, srcSet: `${darynaOleksii900} 900w, ${darynaOleksii1920} 1920w` },
+  },
+  {
+    category: 'portrait',
+    shootId: 'mariia',
+    thumb: { src: terracotta1920, srcSet: `${terracotta900} 900w, ${terracotta1920} 1920w` },
+  },
+  {
+    category: 'family',
+    shootId: 'urodyny-varvary',
+    thumb: { src: storytime1920, srcSet: `${storytime900} 900w, ${storytime1920} 1920w` },
+  },
 ];
 
 export default function Home() {
@@ -43,8 +63,9 @@ export default function Home() {
     return () => clearInterval(id);
   }, []);
 
-  const highlights = HIGHLIGHTS.map(({ category, shootId }) => ({
+  const highlights = HIGHLIGHTS.map(({ category, shootId, thumb }) => ({
     category,
+    thumb,
     shoot: findShoot(category, shootId),
   })).filter((h) => h.shoot);
 
@@ -78,10 +99,12 @@ export default function Home() {
       </Link>
 
       <div className="highlights container">
-        {highlights.map(({ category, shoot }) => (
+        {highlights.map(({ category, shoot, thumb }) => (
           <Link to={`/portfolio?category=${category}&shoot=${shoot.id}`} className="highlight-tile" key={shoot.id}>
             <span className="highlight-imgbox">
-              {shoot.photos[0]?.src && <img src={shoot.photos[0].src} alt="" loading="lazy" />}
+              {thumb && (
+                <img src={thumb.src} srcSet={thumb.srcSet} sizes="(max-width: 860px) 100vw, 33vw" alt="" loading="lazy" />
+              )}
             </span>
             <span className="highlight-label">{shoot.name}</span>
           </Link>
